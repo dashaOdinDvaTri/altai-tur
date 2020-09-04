@@ -767,7 +767,6 @@
     sticky = document.getElementsByClassName("sticky")[0],
     sticky__wrap = document.getElementsByClassName("sticky__wrap")[0],
     container = document.getElementsByClassName("container")[0],
-    menu_logotype = document.getElementsByClassName("menu__logotype")[0],
     phone_new = (lazy = true),
     position_form = sticky__wrap
       ? container.offsetWidth -
@@ -833,7 +832,6 @@
       menu.classList.add("menu_color")
 
       if (window.innerWidth < 768) {
-        menu_logotype.style.display = "none"
 
         if (phone_new) {
           var new_block_phone = document
@@ -853,7 +851,7 @@
       } else {
         document.querySelector(
           ".menu__sm"
-        ).style.cssText = menu_logotype.style.cssText = null
+        ).style.cssText = null
         if (document.querySelector(".menu__block-logotype .menu__phone"))
           document
             .querySelector(".menu__block-logotype .menu__phone")
@@ -866,7 +864,7 @@
       if (window.innerWidth < 768) {
         document.querySelector(
           ".menu__sm"
-        ).style.cssText = menu_logotype.style.cssText = null
+        ).style.cssText = null
         if (document.querySelector(".menu__block-logotype .menu__phone"))
           document
             .querySelector(".menu__block-logotype .menu__phone")
@@ -878,9 +876,6 @@
       if (!menu.classList.contains("menu_fixed"))
         menu.classList.remove("menu_color")
       menu.classList.remove("menu_active")
-      document
-        .getElementsByClassName("menu__logotype")[0]
-        .removeAttribute("style")
     }
   }
 
