@@ -115,6 +115,11 @@ sup {
     max-width: 1170px;
   }
 }
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3194,7 +3199,7 @@ _:-ms-fullscreen,
 }
 @media (max-width: 1200px) {
   .menu__wrapper-link {
-    background: #fff; 00
+    background: #fff;
     width: 400%;
     max-width: 250px;
     height: 0;
@@ -9234,5 +9239,76 @@ _:-ms-fullscreen,
 @media (min-width: 1200px) {
   .menu__wrapper-link {
     min-height: 21px;
+  }
+}
+
+
+.memo-tabs {
+  min-height: 500px;
+}
+.memo-tab {
+  display: inline-block;
+  margin-right: 18px;
+}
+
+.memo-tab__input {
+  display: none;
+}
+
+.memo-tab__label {
+  padding: 18px 0 3px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  transition: 300ms ease-in;
+  border-bottom: 2px solid transparent; 
+}
+
+
+.memo-tab__content {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 80px;
+  transition-property: opacity, z-index;
+  will-change: opacity, z-index;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+  height: 420px;
+  overflow: auto;
+}
+
+.memo-tab__content p {
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+.memo-tab__input:checked + label + .memo-tab__content {
+  opacity: 1;
+  z-index: 1;
+}
+
+.memo-tab__input:checked + label, .memo-tab__label:focus, .memo-tab__content:hover {
+  color: #05386B;
+  border-bottom-color: #05386B;
+}
+
+@media (max-width: 575px) {
+  .menu_active .row.justify-content-md-between {
+    flex-wrap: nowrap;
+  }
+  .memo-tab__label {
+    padding-top: 0;
+  }
+
+  .memo-tab__content {
+    top: 165px;
+  }
+}
+
+@media (max-width: 515px) {
+  .menu_active [data-modal="modal-tour"] {
+    margin-bottom: 9px;
   }
 }

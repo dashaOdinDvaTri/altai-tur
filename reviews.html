@@ -146,7 +146,8 @@
     
     <li class="mt-xl-3 mt-2"><a href="documenty.php.html" class="menu__link animation animation-link-hover">Документы</a></li>
     <li class="mt-xl-3 mt-2"><a href="faq.php.html" class="menu__link animation animation-link-hover">Ответы на вопросы F.A.Q.</a></li>
-<li class="mt-xl-3 mt-2"><a href="reviews.html" class="menu__link animation animation-link-hover">Отзывы</a></li>
+<li class="mt-xl-3 mt-2"><a href="../reviews.html" class="menu__link animation animation-link-hover">Отзывы</a></li>
+<li class="mt-xl-3 mt-2"><a href="memo.html" class="menu__link animation animation-link-hover">Памятка туристу</a></li>
     </ul>
     </div>
     </li>
@@ -189,8 +190,8 @@
     
     </div>
   <section class="comment py-4">
-    <div class="container">
-      <h3 class="title-section text-center text-uppercase mb-lg-5 mb-4">Отзывы наших клиентов</h3>
+    <div class="container mt-5 pt-4">
+      <h3 class="pt-sm-0 pt-4 title-section text-center text-uppercase mb-lg-5 mb-4">Отзывы наших клиентов</h3>
 
       <div class="comment__dots big-dots slider position-relative">
         <div class="js_frame animation pt-lg-4">
@@ -872,6 +873,122 @@
       </div>
     </div>
   </footer>
+
+   <!-- modal-tour-->
+   <div class="modal modal-tour bg-white" tabindex="-1">
+    <div class="modal-body px-sm-5 p-4">
+      <button class="modal__close close animation border-0 d-block p-0 ml-auto mr-0" type="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="close__icon d-block"
+          viewBox="0 0 94.926 94.926">
+          <path
+            d="M55.93 47.463L94.307 9.09a2.118 2.118 0 0 0 0-2.994L88.833.62a2.123 2.123 0 0 0-2.996 0L47.463 38.994 9.09.62c-.796-.795-2.203-.794-2.996 0L.622 6.096a2.117 2.117 0 0 0 0 2.994l38.374 38.373L.622 85.836a2.117 2.117 0 0 0 0 2.994l5.473 5.476a2.123 2.123 0 0 0 2.995 0l38.374-38.374 38.374 38.374c.397.396.937.62 1.498.62s1.1-.224 1.498-.62l5.473-5.476a2.118 2.118 0 0 0 0-2.994L55.93 47.463z" />
+          </svg>
+      </button>
+
+      <form id="getTourForm" class="form w-100 text-center">
+
+        <div class="form__content animation">
+
+          <div class="modal-tour__title py-3 mb-4">
+            <span class="modal-tour__title-big d-block">Укажите параметры</span>
+            и мы подберем для Вас тур<br>
+            <span class="modal-tour__title-main text-uppercase font-weight-bold">по лучшей цене</span>
+          </div>
+
+          <input type="hidden" name="subject" value="Укажите параметры и мы подберем для Вас тур по лучшей цене">
+
+          <div class="form__group">
+            <div class="position-relative">
+              <input type="text" name="name" class="w-100 animation px-3">
+              <label
+                class="position-absolute placeholder-label animation d-flex align-items-center justify-content-center px-3">Ваше
+                имя</label>
+            </div>
+            <div class="form__group-error mt-sm-0 mt-1 animation">Введите имя</div>
+          </div>
+
+          <div class="row align-items-center mt-md-3 mt-2">
+            <div class="col-md-5 pr-md-0">
+              <div class="form__group mt-md-3 mt-2">
+                <div class="position-relative">
+                  <input type="text" name="start_tour" class="xCal w-100 animation px-3" autocomplete="off">
+                  <label
+                    class="position-absolute placeholder-label animation d-flex align-items-center justify-content-center px-3">Дата
+                    начала тура</label>
+                </div>
+                <div class="form__group-error mt-sm-0 mt-1 animation">Введите дату начала тура</div>
+              </div>
+            </div>
+            <div class="col-md-2">-</div>
+            <div class="col-md-5 pl-md-0">
+              <div class="form__group mt-md-3 mt-2">
+                <div class="position-relative">
+                  <input type="text" name="end_tour" class="xCal w-100 animation px-3" autocomplete="off">
+                  <label
+                    class="position-absolute placeholder-label animation d-flex align-items-center justify-content-center px-3">Дата
+                    окончания тура</label>
+                </div>
+                <div class="form__group-error mt-sm-0 mt-1 animation">Введите дату окончания тура</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form__group mt-md-3 mt-2">
+            <div class="position-relative">
+              <input type="email" name="email" class="w-100 animation px-3">
+              <label
+                class="position-absolute placeholder-label animation d-flex align-items-center justify-content-center px-3">Ваш
+                E-mail</label>
+            </div>
+            <div class="form__group-error mt-sm-0 mt-1 animation">Введите E-mail</div>
+          </div>
+
+          <div class="form__group mt-md-3 mt-2">
+            <div class="position-relative">
+              <input type="tel" name="phone" class="w-100 animation px-3">
+              <label
+                class="position-absolute placeholder-label animation d-flex align-items-center justify-content-center px-3">Ваш
+                телефон</label>
+            </div>
+            <div class="form__group-error mt-sm-0 mt-1 animation">Введите телефон</div>
+          </div>
+
+          <div class="form__group mt-md-3 mt-2">
+            <div class="position-relative">
+              <input type="text" name="city_main" class="w-100 animation px-3">
+              <label
+                class="position-absolute placeholder-label animation d-flex align-items-center justify-content-center px-3">Ваш
+                город</label>
+            </div>
+            <div class="form__group-error mt-sm-0 mt-1 animation">Введите город</div>
+          </div>
+
+          <button type="submit"
+            class="btn btn_min modal-individual__form-btn animation text-white w-100 mt-md-4 border-0 mt-4 text-uppercase py-3 px-2">Подобрать
+            тур</button>
+
+          <div class="compliance mt-4">Нажимая кнопку, вы даете согласие на <a href="pdf/compliance.pdf" target="_blank"
+              class="animation d-inline-block animation-link-hover">обработку персональных данных</a></div>
+
+        </div>
+
+        <div class="form__success animation">
+
+          <div class="form__success-content pt-4 p-3">
+            <p class="form__success-title form__success-title_min mb-2 font-weight-bold">Спасибо за ваш запрос!</p>
+            <p>Мы свяжемся с Вами в ближайшее время
+              <span data-trigger="repeat-sender" class="font-weight-semibold animation animation-link-hover">Отправить
+                еще</span>.</p>
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
   
   <script
     src="https://cdn.jsdelivr.net/combine/npm/lory.js@2.5.2,npm/lightgallery.js@1.1.1/dist/js/lightgallery.min.js"></script>

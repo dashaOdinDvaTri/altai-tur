@@ -832,22 +832,10 @@
       menu.classList.add("menu_color")
 
       if (window.innerWidth < 768) {
-
-        if (phone_new) {
-          var new_block_phone = document
-            .getElementsByClassName("menu__phone")[0]
-            .cloneNode(true)
-          document
-            .getElementsByClassName("menu__block-logotype")[0]
-            .appendChild(new_block_phone)
-          phone_new = false
-        }
         var height_sm = document.querySelector(".menu__sm").offsetHeight
         height_sm += parseInt(
           getComputedStyle(document.querySelector(".menu__sm")).marginBottom
         )
-        document.getElementsByClassName("menu__sm")[0].style.marginTop =
-          -height_sm + "px"
       } else {
         document.querySelector(
           ".menu__sm"
@@ -870,7 +858,7 @@
             .querySelector(".menu__block-logotype .menu__phone")
             .parentNode.removeChild(
               document.querySelector(".menu__block-logotype .menu__phone")
-            ) //.remove()
+            ).remove()
         phone_new = true
       }
       if (!menu.classList.contains("menu_fixed"))
