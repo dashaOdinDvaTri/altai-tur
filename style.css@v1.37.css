@@ -8277,6 +8277,23 @@ _:-ms-fullscreen,
 .intro-special-offers {
   min-height: auto;
 }
+
+.container-policy{
+  
+}
+.title-policy{
+  font-size: 25px;
+  margin: 10px;
+  font-weight: 900;
+}
+.subtitle-policy{
+  margin-left: 80px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.text-police {
+  margin-left: 80px !important;
+}
 @media (max-width: 1200px) {
   .intro-special-offers__wrapper {
     min-height: auto;
