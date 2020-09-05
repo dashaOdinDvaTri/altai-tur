@@ -2903,11 +2903,11 @@ img[src*="lazy.png"] {
       linear,
       left top,
       left bottom,
-      from(#da2e2e),
-      to(#da2e2e)
+      from(#379683),
+      to(#05386B)
     )
     0 100%/100% 4px no-repeat;
-  background: linear-gradient(to bottom, #da2e2e 0%, #da2e2e 100%) 0 100%/100%
+  background: linear-gradient(to bottom, #05386B 0%, #2e79da 100%) 0 100%/100%
     4px no-repeat;
 }
 .form__content {
@@ -3604,26 +3604,17 @@ _:-ms-fullscreen,
     linear,
     right top,
     left top,
-    from(rgba(230, 240, 249, 0)),
-    to(rgba(149, 184, 216, 0.2))
+    from(rgba(2, 42, 77, 0)),
+    to(rgba(69, 121, 170, 0.2))
   );
   background: linear-gradient(
     -90deg,
-    rgba(230, 240, 249, 0) 0%,
-    rgba(149, 184, 216, 0.2) 100%
+    rgba(16, 67, 112, 0) 0%,
+    rgba(38, 82, 124, 0.2) 100%
   );
-  color: #32374d;
+  color: #24629c;
 }
-.attractions__list li:before {
-  content: "";
-  background: #32374d;
-  width: 2px;
-  height: 100%;
-  position: absolute;
-  left: 10px;
-  top: 0;
-  border-radius: 100px;
-}
+
 .attractions__content-btn-title {
   font-size: calc((100vw - 320px) / 1500 * 2 + 1.125rem);
   font-size: calc((100vw - 320px) / var(--responsive) * 2 + 1.125rem);
@@ -9240,6 +9231,8 @@ _:-ms-fullscreen,
   padding: 6.5px 0;
 }
 
-.menu__wrapper-link {
-  min-height: 21px;
+@media (min-width: 1200px) {
+  .menu__wrapper-link {
+    min-height: 21px;
+  }
 }

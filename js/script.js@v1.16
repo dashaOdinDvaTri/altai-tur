@@ -2156,4 +2156,36 @@ price_fixed.innerHTML=localValue
     );
     return el
   }
+
+  function getFieldValue(form,fieldName){
+    form[fieldName].readOnly = true
+    return form[fieldName].value
+  }
+
+  function listenGettingTourForm() {
+    var getTourForm =  document.getElementById('getTourForm');
+    if (!getTourForm) return null
+
+    getTourForm.addEventListener('submit',function (event){
+      var payload = {}
+      var fieldNames = ['name', 'start_tour', 'end_tour', 'email', 'phone', 'city_main']
+      fieldNames.forEach(function(fieldName){
+        payload[fieldName] = getFieldValue(getTourForm,fieldName)
+      })
+      console.log(getFieldValue(getTourForm,'name'));
+      event.preventDefault();
+      fetch('https://hook.integromat.com/hkcua9stj09rg4z39l2lt87to91v6kcn', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      }).then(() => {
+        var button = getTourForm.querySelector('[type=submit]')
+        button.insertAdjacentHTML('afterend', '<p class="mt-4"><strong>Мы скоро свяжемся с вами!<strong></p>')
+        button.style.display = 'none'
+      })
+    })
+  }
+  listenGettingTourForm()
 })
