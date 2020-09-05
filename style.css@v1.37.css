@@ -5619,7 +5619,7 @@ _:-ms-fullscreen,
   background: url(images/contact/contact-bg_png.png) center/cover no-repeat;
 }
 .contact.contact_transparent.webp-bg {
-  background: url(images/contact/contact-bg_png.webp) center/cover no-repeat;
+  background: url(images/contact/contact-bg2.webp) center/cover no-repeat;
 }
 .contact.contact_top {
   margin-top: -30px;
@@ -7716,13 +7716,13 @@ _:-ms-fullscreen,
   background: url(images/contact/contact-bg_png.png) center/cover no-repeat;
 }
 .corporate-tours-page .contact.webp-bg {
-  background: url(images/contact/contact-bg_png.webp) center/cover no-repeat;
+  background: url(images/contact/contact-bg2.webp) center/cover no-repeat;
 }
 .corporate-tours-page .contact {
   background: url(images/contact/contact-bg_png.png) center/cover no-repeat;
 }
 .corporate-tours-page .contact.webp-bg {
-  background: url(images/contact/contact-bg_png.webp) center/cover no-repeat;
+  background: url(images/contact/contact-bg2.webp) center/cover no-repeat;
 }
 .corporate-tours-page .form_color input {
   background: rgba(0, 0, 0, 0.3);
