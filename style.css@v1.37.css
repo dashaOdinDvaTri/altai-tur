@@ -3056,7 +3056,7 @@ _:-ms-fullscreen,
 .menu__link-hover_active {
   color: #0a0a0a;
 }
-.menu__link_all {
+.menu__link_active {
   color: #8EE4AF;
   background-image: -webkit-gradient(
     linear,
@@ -3066,6 +3066,7 @@ _:-ms-fullscreen,
     to(#8EE4AF)
   );
   background-image: linear-gradient(to bottom, #8EE4AF 0%, #8EE4AF 100%);
+  font-weight: bold
 }
 .menu__link-open_active {
   color: #0a0a0a;

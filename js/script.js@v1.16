@@ -117,9 +117,9 @@
 
     //ya.city
     var yacity
-    if (window.innerWidth > 992 && typeof ymaps !== "undefined") {
-      ymaps.ready(function () {
-        yacity = ymaps.geolocation.city
+    if (window.innerWidth > 992 && typeof window.ymaps !== "undefined") {
+      window.ymaps.ready(function () {
+        yacity = window.ymaps.geolocation.city
       })
     }
 
@@ -1922,12 +1922,12 @@
   /*-----------------------------map-----------------------------*/
   if (document.getElementById("map") && window.innerWidth > 992) {
     function mapInit() {
-      var myMap = new ymaps.Map("map", {
+      var myMap = new window.ymaps.Map("map", {
         center: [55.0486598, 82.91123999],
         zoom: 16,
       })
 
-      var myPlacemark = new ymaps.Placemark(
+      var myPlacemark = new window.ymaps.Placemark(
         [55.0486598, 82.91123999],
         {},
         {
@@ -1941,7 +1941,10 @@
       myMap.controls.add("zoomControl", { right: 10, top: 200 })
       myMap.behaviors.disable(["scrollZoom", "dblClickZoom", "multiTouch"])
     }
-    ymaps.ready(mapInit)
+
+    setTimeout(function () {
+      window.ymaps.ready(mapInit)
+    }, 2000)
   }
 
   /*-----------------------------true-altai__price-js-----------------------------*/
@@ -2176,4 +2179,21 @@ price_fixed.innerHTML=localValue
     })
   }
   listenGettingTourForm()
+
+  function defineActivePage(){
+    var locationHref = window.location.href
+    console.log(locationHref)
+    var links = document.getElementsByClassName('menu__link');
+    Array.from(links).forEach(function(link){
+      var href = link.href
+      if (!href) return null
+
+      if (locationHref.includes(href.replace('.html', '')) || (href.includes('index.html') && window.location.pathname === '/')) {
+        link.classList.add('menu__link_active')
+      } else {
+        link.classList.remove('menu__link_active')
+      }
+    })
+  }
+  defineActivePage();
 })
