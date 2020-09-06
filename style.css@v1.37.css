@@ -3411,7 +3411,7 @@ _:-ms-fullscreen,
 }
 .intro-index__title-main.title-main {
   
-  color: #05386B;
+  color: #0f0f0f;
   font-size: calc((100vw - 320px) / 1500 * 40 + 1.8rem);
   font-size: calc((100vw - 320px) / var(--responsive) * 40 + 1.8rem);
   line-height: 1;
@@ -3539,7 +3539,7 @@ _:-ms-fullscreen,
   line-height: 1;
 }
 .attractions__title-section {
-  color: #05386B;
+  color: #0f0f0f;
   background-position: 63% 90%;
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
@@ -9302,6 +9302,9 @@ _:-ms-fullscreen,
   .menu_active .row.justify-content-md-between {
     flex-wrap: nowrap;
   }
+      .menu_active .menu__wrapper-link {
+        right: 0;
+      }
   .memo-tab__label {
     padding-top: 0;
   }
@@ -9314,5 +9317,12 @@ _:-ms-fullscreen,
 @media (max-width: 515px) {
   .menu_active [data-modal="modal-tour"] {
     margin-bottom: 9px;
+
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1138px) {
+  .menu__wrapper-link {
+    right: auto;
   }
 }
