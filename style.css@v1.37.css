@@ -3411,7 +3411,8 @@ _:-ms-fullscreen,
 }
 .intro-index__title-main.title-main {
   
-  color: #0f0f0f;
+  color: #071166;
+  text-shadow: -5px 3px 4px #0F7FCE;
   font-size: calc((100vw - 320px) / 1500 * 40 + 1.8rem);
   font-size: calc((100vw - 320px) / var(--responsive) * 40 + 1.8rem);
   line-height: 1;
