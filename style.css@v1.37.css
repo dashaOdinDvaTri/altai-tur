@@ -3203,11 +3203,16 @@ _:-ms-fullscreen,
   font-weight: 600;
   color: #141f7e;
   margin-top: 125px;
+  padding-bottom:125px ;
+}
+@media(max-width: 768px) {
+  .info-navigation {
+    margin-top:0;
+    padding-bottom: 0px;
+  }
+}
 
-}
-.menu__link-info {
-  color: #e5f3ee;
-}
+
 .info-title {
   color: #081738;
 }
@@ -9351,4 +9356,5 @@ _:-ms-fullscreen,
 
 .main-content {
   min-height: calc(100vh - 68px);
+  padding-top: 131px;
 }
