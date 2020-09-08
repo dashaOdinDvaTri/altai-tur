@@ -2148,22 +2148,23 @@ price_fixed.innerHTML=localValue
     return el
   }
 
-  function getFieldValue(form,fieldName){
+  function getFieldValue(form, fieldName){
     form[fieldName].readOnly = true
     return form[fieldName].value
   }
 
-  function listenGettingTourForm() {
-    var getTourForm =  document.getElementById('getTourForm');
-    if (!getTourForm) return null
+  function listenSubmitionForm(formId, fieldNames, mailSubject) {
+    var form = document.getElementById(formId);
+    if (!form) return null
 
-    getTourForm.addEventListener('submit',function (event){
-      var payload = {}
-      var fieldNames = ['name', 'start_tour', 'end_tour', 'email', 'phone', 'city_main']
-      fieldNames.forEach(function(fieldName){
-        payload[fieldName] = getFieldValue(getTourForm,fieldName)
-      })
-      console.log(getFieldValue(getTourForm,'name'));
+    form.addEventListener('submit', function(event) {
+      var payload = {
+        mailSubject: mailSubject,
+      }
+      fieldNames.forEach(function(fieldName) {
+        payload[fieldName] = getFieldValue(form, fieldName)
+      });
+
       event.preventDefault();
       fetch('https://hook.integromat.com/hkcua9stj09rg4z39l2lt87to91v6kcn', {
         method: 'POST',
@@ -2171,14 +2172,23 @@ price_fixed.innerHTML=localValue
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
-      }).then(() => {
-        var button = getTourForm.querySelector('[type=submit]')
+      }).then(function() {
+        var button = form.querySelector('[type=submit]')
         button.insertAdjacentHTML('afterend', '<p class="mt-4"><strong>Мы скоро свяжемся с вами!<strong></p>')
         button.style.display = 'none'
       })
     })
   }
-  listenGettingTourForm()
+  listenSubmitionForm(
+    'getTourForm',
+    ['name', 'start_tour', 'end_tour', 'email', 'phone', 'city_main'],
+    'Форма "Подобрать тур"'
+  )
+  listenSubmitionForm(
+    'askQuestionForm',
+    ['email', 'message'],
+    'Форма "Задать вопрос"'
+  )
 
   function defineActivePage(){
     var locationHref = window.location.href
