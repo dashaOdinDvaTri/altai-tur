@@ -65,16 +65,31 @@
                         background:url('./404.png') center no-repeat; 
                         box-sizing: content-box;
                         margin-bottom: -131px;
+                        background-size: cover;
                       }
 
                       @media (max-width: 768px) {
                         main {
-                          background-size : contain;
-                          padding-top: 0 !important;
+                          background-size : cover;
+                          
                           margin-bottom: -5vw;
                         }
                       }
-										
+                      footer{
+                        background-color: white;
+                      }
+                      h3{
+                        color: rgb(208, 209, 231);
+                        text-shadow: -5px 3px 4px #133852;
+                        font-size: 50px;
+                        font-weight: bolder;
+                        text-align: center;
+                      }
+										 @media(max-width: 768px){
+                      h3{
+                      
+                      }
+                     }
 											/* @media only screen and (max-width: 460px), screen and (max-height: 700px) {
 											
                       main {background-size:cover; height: 100vh;}
@@ -202,7 +217,8 @@
     
     </div>
 <main class="main-content">
- 
+  <h3 class="404-title"> 404 <br>
+    Страница не найдена</h3>
 </main>
 <!-- modal-tour-->
 <div class="modal modal-tour bg-white" tabindex="-1">
