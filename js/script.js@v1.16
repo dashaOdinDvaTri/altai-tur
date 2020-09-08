@@ -2148,47 +2148,73 @@ price_fixed.innerHTML=localValue
     return el
   }
 
-  function getFieldValue(form, fieldName){
-    form[fieldName].readOnly = true
-    return form[fieldName].value
+  function getFieldValue(form, fieldName) {
+    var field = form[fieldName]
+    if (!field) return null
+
+    return field.value
   }
 
-  function listenSubmitionForm(formId, fieldNames, mailSubject) {
-    var form = document.getElementById(formId);
-    if (!form) return null
+  var fieldNames = [
+    'name',
+    'email',
+    'start_tour',
+    'end_tour',
+    'phone',
+    'city_main',
+    'message',
+    'name_tour',
+    'travel_date',
+    'birthday_tourist',
+    'document_info',
+    'series',
+    'date_issue',
+    'issued_by',
+    'department_code',
+    'registration_address_tourist',
+    'peculiar_properties',
+    'duration_days',
+    'subject',
+    'number_persons',
+    'budget',
+    'call',
+  ]
+  function listenSubmitionForm(mailSubject) {
+    var forms = Array.from(document.getElementsByTagName('form') || []);
+    if (!forms.length) return null
 
-    form.addEventListener('submit', function(event) {
-      var payload = {
-        mailSubject: mailSubject,
-      }
-      fieldNames.forEach(function(fieldName) {
-        payload[fieldName] = getFieldValue(form, fieldName)
-      });
-
-      event.preventDefault();
-      fetch('https://hook.integromat.com/hkcua9stj09rg4z39l2lt87to91v6kcn', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      }).then(function() {
+    forms.forEach((form) => {
+      form.addEventListener('submit', function(event) {
+        var payload = {
+          mailSubject,
+        }
+        fieldNames.forEach(function(fieldName) {
+          var fieldValue = getFieldValue(form, fieldName)
+          if (!fieldValue) return null
+  
+          payload[fieldName] = fieldValue
+        });
+  
         var button = form.querySelector('[type=submit]')
-        button.insertAdjacentHTML('afterend', '<p class="mt-4"><strong>Мы скоро свяжемся с вами!<strong></p>')
-        button.style.display = 'none'
+        button.disabled = true
+        event.preventDefault();
+        fetch('https://hook.integromat.com/vi4tfyl7e493u3n3aax2e951gbes48fz', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }).then(function() {
+          var successBlock = form.querySelector(".form__success")
+          var formContent = form.querySelector('.form__content')
+          formContent.style.height = 0
+          successBlock.style.height = successBlock.scrollHeight + "px"
+          button.disabled = false
+        })
       })
     })
   }
-  listenSubmitionForm(
-    'getTourForm',
-    ['name', 'start_tour', 'end_tour', 'email', 'phone', 'city_main'],
-    'Форма "Подобрать тур"'
-  )
-  listenSubmitionForm(
-    'askQuestionForm',
-    ['email', 'message'],
-    'Форма "Задать вопрос"'
-  )
+  listenSubmitionForm()
 
   function defineActivePage(){
     var locationHref = window.location.href
