@@ -3285,6 +3285,7 @@ _:-ms-fullscreen,
 .intro-index__banner-info {
   font-size: 0.875rem;
   cursor: pointer;
+  color: #ffffff;
 }
 .intro-index__banner-info:before,
 .intro-index__banner-info:after {
@@ -3418,7 +3419,7 @@ _:-ms-fullscreen,
   }
 }
 .intro-index__banner-text-color {
-  color: #2681c8;
+  color: rgb(78, 238, 91);
 }
 .intro-index__banner-text-color_bg {
   background-image: -webkit-gradient(
